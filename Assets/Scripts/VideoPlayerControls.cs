@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class VideoPlayerControls : MonoBehaviour
@@ -49,5 +48,6 @@ public class VideoPlayerControls : MonoBehaviour
     {
         Screen.fullScreen = !Screen.fullScreen;
     }
+
 
 }
