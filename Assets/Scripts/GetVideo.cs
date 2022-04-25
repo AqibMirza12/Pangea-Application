@@ -5,11 +5,11 @@ public class GetVideo : MonoBehaviour
 {
 
     public UnityWebRequest uwr;
-    public VLCWrapper VLCinstance;
+    //public VLCWrapper VLCinstance;
 
     void Start()
     {
-        VLCWrapper.Test.Run();
+        //VLCWrapper.Test.Run();
         RTSPRequest();
     }
 
