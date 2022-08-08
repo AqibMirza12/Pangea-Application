@@ -16,7 +16,7 @@ public class SceneManager : MonoBehaviour
 
     public void BackButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("App");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("App");
     }
 
 
