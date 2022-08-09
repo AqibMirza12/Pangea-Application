@@ -30,10 +30,7 @@ public class SceneManager : MonoBehaviour
         videoRelay.SetActive(true);
     }
 
-    public void BackButton()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("App");
-    }
+
 
 
 }
