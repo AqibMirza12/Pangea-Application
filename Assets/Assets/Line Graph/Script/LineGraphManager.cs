@@ -11,7 +11,7 @@ public class LineGraphManager : MonoBehaviour {
 	public GameObject pointerRed;
 	public GameObject pointerBlue;
 
-	public GameObject HolderPrefb;
+	//public GameObject HolderPrefb;
 
 	public GameObject holder;
 	public GameObject xLineNumber;
@@ -86,7 +86,7 @@ public class LineGraphManager : MonoBehaviour {
 		ClearGraph();
 
 		if(graphDataPlayer1.Count >= 1 && graphDataPlayer2.Count >= 1){
-			holder = Instantiate(HolderPrefb,Vector3.zero,Quaternion.identity) as GameObject;
+			//holder = Instantiate(HolderPrefb,Vector3.zero,Quaternion.identity) as GameObject;
 			holder.name = "h2";
 
 			GraphData[] gd1 = new GraphData[graphDataPlayer1.Count];

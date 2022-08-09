@@ -43,6 +43,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f70bf24f9f93549aeee810fbbbe15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneGO:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SceneGO1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  vitalSigns: {fileID: 0}
+  videoRelay: {fileID: 0}
 --- !u!1 &7085466679268255239
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7128825928329218996
 Transform:
   m_ObjectHideFlags: 0
@@ -1413,7 +1431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8599329622154057099
 Transform:
   m_ObjectHideFlags: 0

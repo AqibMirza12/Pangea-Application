@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rawImage: {fileID: 702931942}
-  url: rtsp://rtsp.stream/pattern
+  url: rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4
   width: 480
   height: 256
   autoscaleRawImage: 0
@@ -375,7 +375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4412390824701739615
 Transform:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5554603384302000767
 Transform:
   m_ObjectHideFlags: 0
@@ -522,3 +522,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f70bf24f9f93549aeee810fbbbe15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneGO:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SceneGO1:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  vitalSigns: {fileID: 0}
+  videoRelay: {fileID: 0}
