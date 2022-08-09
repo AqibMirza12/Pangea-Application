@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/App.unity
     guid: 312b710287b76d242b15cb1d2f6afdc9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VideoScene.unity
     guid: 370af3b87bd525a4081dd7889c61aad8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VitalSigns.unity
     guid: e5892b5f2cd0ea74985ff5fc7da9ed7a
   m_configObjects: {}
