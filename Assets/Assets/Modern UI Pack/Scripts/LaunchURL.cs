@@ -10,5 +10,10 @@ namespace Michsky.UI.ModernUIPack
         {
             Application.OpenURL(URL);
         }
+
+        public void ButtonClicked()
+        {
+            Debug.Log("button clicked");
+        }
     }
 }
