@@ -2,16 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using VSCaptureMRay;
 
-namespace VSCaptureMRay
-{
-    class Program
+class MindrayConnect : MonoBehaviour
     {
         static void Main(string[] args)
         {
@@ -97,20 +97,21 @@ namespace VSCaptureMRay
 
         }
 
-        public static void ConnectviaTCP()
-        {
-            Console.WriteLine("You may connect an Ethernet cable to the Mindray monitor LAN port");
-            Console.WriteLine("Note the IP address from the Network Status menu in the monitor");
+    public static string GetLocalIPv4()
+    {
+        return Dns.GetHostEntry(Dns.GetHostName())
+            .AddressList.First(
+                f => f.AddressFamily == AddressFamily.InterNetwork)
+            .ToString();
+    }
 
-            Console.WriteLine();
-            Console.WriteLine("Numeric Data Transmission sets:");
-            Console.WriteLine("1. 1 second (Real time)");
-            Console.WriteLine("2. 9 second (Averaged)");
-            Console.WriteLine("3. 1 minute (Averaged)");
-            Console.WriteLine("4. 5 minute (Averaged)");
-            Console.WriteLine("5. Single poll");
-            Console.WriteLine();
-            Console.Write("Choose Data Transmission interval (1-5):");
+    public static void ConnectviaTCP()
+        {
+
+            GUI.Label(new Rect(0, 0, 100, 50), "Connect the Mindray Monitor using an Ethernet cable");
+            GetLocalIPv4();
+
+            GUI.Label(new Rect(0, 0, 100, 50), "Data will be outputted in real-time");
 
             string sIntervalset = Console.ReadLine();
             int[] setarray = { 1, 9, 60, 300, 0 };
@@ -119,36 +120,17 @@ namespace VSCaptureMRay
             if (sIntervalset != "") nIntervalset = Convert.ToInt16(sIntervalset);
             if (nIntervalset > 0 && nIntervalset < 6) nInterval = setarray[nIntervalset - 1];
 
-            /*Console.WriteLine();
-            Console.WriteLine("CSV Data Export Options:");
-            Console.WriteLine("1. Single value list");
-            Console.WriteLine("2. Data packet list");
-            Console.WriteLine("3. Consolidated data list");
-            Console.WriteLine();
-            Console.Write("Choose CSV export option (1-3):");
-
-            string sCSVset = Console.ReadLine();
-            int nCSVset = 3;
-            if (sCSVset != "") nCSVset = Convert.ToInt32(sCSVset);*/
-
             // Create a new TCP Client object with default settings.
             MRayTCPclient _MRaytcpclient = MRayTCPclient.getInstance;
 
-            Console.WriteLine("Enter the target IP address of the monitor assigned by DHCP:");
-
             string IPAddressRemote = Console.ReadLine();
 
-            Console.WriteLine("Connecting to {0}...", IPAddressRemote);
-            Console.WriteLine();
-            Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
-            Console.WriteLine();
-            Console.WriteLine("Data will be written to CSV file MRayDataExport.csv in same folder");
-            Console.WriteLine();
-            Console.WriteLine("Press Escape button to Stop");
+           GUI.Label(new Rect(0, 0, 100, 50), "Connecting to Mindray Monitor");
+           Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
 
-            //if (nCSVset > 0 && nCSVset < 4) _MRaytcpclient.m_csvexportset = nCSVset;
+        //if (nCSVset > 0 && nCSVset < 4) _MRaytcpclient.m_csvexportset = nCSVset;
 
-            if (IPAddressRemote != "")
+        if (IPAddressRemote != "")
             {
                 //Default MindRay monitor port is 4601
                 _MRaytcpclient.m_remoteIPtarget = new IPEndPoint(IPAddress.Parse(IPAddressRemote), 4601);
@@ -191,7 +173,7 @@ namespace VSCaptureMRay
                         //Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(nInterval));
                         Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(9));
 
-                        string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
+                        //string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
 
                         //Send TCP echo messages
                         //int nEchointerval = 1000;
@@ -228,4 +210,3 @@ namespace VSCaptureMRay
 
         }
     }
-}
