@@ -12,12 +12,11 @@ using UnityEngine;
 using VSCaptureMRay;
 
 class MindrayConnect : MonoBehaviour
+{
+    private void Start()
     {
-        static void Main(string[] args)
-        {
-            ConnectviaTCP();
-        }
-
+        ConnectviaTCP();
+    }
         public class TcpState
         {
             //Tcp client
@@ -105,15 +104,18 @@ class MindrayConnect : MonoBehaviour
             .ToString();
     }
 
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 50), "Connect the Mindray Monitor using an Ethernet cable");
+        GUI.Label(new Rect(0, 0, 100, 50), "Data will be outputted in real-time");
+        GUI.Label(new Rect(0, 0, 100, 50), "Connecting to Mindray Monitor");
+    }
+
     public static void ConnectviaTCP()
         {
-
-            GUI.Label(new Rect(0, 0, 100, 50), "Connect the Mindray Monitor using an Ethernet cable");
             GetLocalIPv4();
 
-            GUI.Label(new Rect(0, 0, 100, 50), "Data will be outputted in real-time");
-
-            string sIntervalset = Console.ReadLine();
+            string sIntervalset = Input.inputString;
             int[] setarray = { 1, 9, 60, 300, 0 };
             short nIntervalset = 2;
             int nInterval = 9;
@@ -123,9 +125,9 @@ class MindrayConnect : MonoBehaviour
             // Create a new TCP Client object with default settings.
             MRayTCPclient _MRaytcpclient = MRayTCPclient.getInstance;
 
-            string IPAddressRemote = Console.ReadLine();
+            string IPAddressRemote = Input.inputString;
 
-           GUI.Label(new Rect(0, 0, 100, 50), "Connecting to Mindray Monitor");
+           
            Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
 
         //if (nCSVset > 0 && nCSVset < 4) _MRaytcpclient.m_csvexportset = nCSVset;
@@ -134,7 +136,7 @@ class MindrayConnect : MonoBehaviour
             {
                 //Default MindRay monitor port is 4601
                 _MRaytcpclient.m_remoteIPtarget = new IPEndPoint(IPAddress.Parse(IPAddressRemote), 4601);
-
+                Debug.Log(_MRaytcpclient.m_remoteIPtarget);
 
                 try
                 {
