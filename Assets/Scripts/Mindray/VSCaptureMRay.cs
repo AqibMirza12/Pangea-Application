@@ -20,17 +20,17 @@ using System.Text.RegularExpressions;
 
 namespace VSCaptureMRay
 {
-    class MRayTCPclient : TcpClient
+    public class MRayTCPclient : TcpClient
     {
         public IPEndPoint m_remoteIPtarget;
         public int m_csvexportset = 1;
-        public List<string> m_FrameList = new List<string>();
+        public static List<string> m_FrameList = new List<string>();
 
-        public List<NumericValResult> m_NumericValList = new List<NumericValResult>();
+        public static List<NumericValResult> m_NumericValList = new List<NumericValResult>();
         public StringBuilder m_strbuildvalues = new StringBuilder();
-        public StringBuilder m_strbuildheaders = new StringBuilder();
-        public bool m_transmissionstart = true;
-        public List<string> m_NumValHeaders = new List<string>();
+        public static StringBuilder m_strbuildheaders = new StringBuilder();
+        public static bool m_transmissionstart = true;
+        public static List<string> m_NumValHeaders = new List<string>();
 
         public class NumericValResult
         {
@@ -368,7 +368,7 @@ namespace VSCaptureMRay
             else MRayTClient.Client.Send(senddata1);
         }
 
-        public void WriteNumericHeadersList()
+        public static void WriteNumericHeadersList()
         {
             if (m_NumericValList.Count != 0 && m_transmissionstart)
             {
@@ -425,7 +425,7 @@ namespace VSCaptureMRay
             }
         }
 
-        public void ExportNumValListToCSVFile(string _FileName, StringBuilder strbuildNumVal)
+        public static void ExportNumValListToCSVFile(string _FileName, StringBuilder strbuildNumVal)
         {
             try
             {
