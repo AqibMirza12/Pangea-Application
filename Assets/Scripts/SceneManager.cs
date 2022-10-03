@@ -8,16 +8,11 @@ public class SceneManager : MonoBehaviour
     public GameObject[] SceneGO1 = new GameObject[7];
     public GameObject vitalSigns;
     public GameObject videoRelay;
-    private static bool appLan;
-
+    
     public static void VitalSignsFullScreen()
     {
         Debug.Log(MindrayConnect.GetLocalIPv4());
-        Debug.Log(VSCaptureMRay.MRayTCPclient.m_FrameList.Count);
-        Debug.Log(VSCaptureMRay.MRayTCPclient.m_transmissionstart);
-        Debug.Log(VSCaptureMRay.MRayTCPclient.m_NumericValList.Count);
-        Debug.Log(VSCaptureMRay.MRayTCPclient.m_NumValHeaders.Count);
-        Debug.Log(Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork);
+        MindrayConnect.GetLocalIPv4();
     }
 
     public void VideoFullScreen()
