@@ -16,15 +16,15 @@ public class PrefabLink : MonoBehaviour
         }
     }
 
-    //public void VideoBackButton()
-    //{
-    //    videoRelay.SetActive(false);
+    public void VideoBackButton()
+    {
+        //videoRelay.SetActive(false);
 
-    //    for (int i = 0; i < FindObjectOfType<SceneManager>().SceneGO.Length; i++)
-    //    {
-    //        FindObjectOfType<SceneManager>().SceneGO[i].gameObject.SetActive(true);
-    //    }
-    //}
+        for (int i = 0; i < FindObjectOfType<SceneManager>().SceneGO.Length; i++)
+        {
+            FindObjectOfType<SceneManager>().SceneGO[i].gameObject.SetActive(true);
+        }
+    }
 
 
 }

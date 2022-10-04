@@ -31,7 +31,6 @@ public class Server : MonoBehaviour
         m_Connections.Dispose();
     }
 
-    // Update is called once per frame
     void Update()
     {
         m_driver.ScheduleUpdate().Complete();
