@@ -31,6 +31,7 @@ public class SceneManager : MonoBehaviour
     {
         Debug.Log(MindrayConnect.GetLocalIPv4());
         MindrayConnect.GetLocalIPv4();
+        MindrayConnect.ConnectviaTCP();
     }
 
     public void VideoFullScreen()

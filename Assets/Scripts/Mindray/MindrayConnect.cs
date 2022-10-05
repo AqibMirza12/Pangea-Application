@@ -113,7 +113,7 @@ class MindrayConnect : MonoBehaviour
 
     public static void ConnectviaTCP()
         {
-            GetLocalIPv4();
+            //GetLocalIPv4();
 
             string sIntervalset = Input.inputString;
             int[] setarray = { 1, 9, 60, 300, 0 };
@@ -125,10 +125,11 @@ class MindrayConnect : MonoBehaviour
             // Create a new TCP Client object with default settings.
             MRayTCPclient _MRaytcpclient = MRayTCPclient.getInstance;
 
-            string IPAddressRemote = Input.inputString;
+            string IPAddressRemote = "169.254.114.168";
+            Debug.Log(IPAddressRemote);
 
-           
-           Console.WriteLine("Requesting Transmission set {0} from monitor", nIntervalset);
+
+        Debug.Log("Requesting Transmission set {0} from monitor" + nIntervalset);
 
         //if (nCSVset > 0 && nCSVset < 4) _MRaytcpclient.m_csvexportset = nCSVset;
 
@@ -175,14 +176,14 @@ class MindrayConnect : MonoBehaviour
                         //Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(nInterval));
                         Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(9));
 
-                        //string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
+                        string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
 
                         //Send TCP echo messages
-                        //int nEchointerval = 1000;
+                        int nEchointerval = 1000;
 
                         //if (nInterval != 1)
                         //{
-                        //Task.Run(() => _MRaytcpclient.SendTCPEchoMessage(nEchointerval));
+                        Task.Run(() => _MRaytcpclient.SendTCPEchoMessage(nEchointerval));
                         //}
 
                         //Receive PollDataResponse message
@@ -198,14 +199,14 @@ class MindrayConnect : MonoBehaviour
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error opening/writing to TCP port :: " + ex.Message, "Error!");
+                    Debug.Log("Error opening/writing to TCP port :: " + ex.Message);
                 }
 
 
             }
             else
             {
-                Console.WriteLine("Invalid IP Address");
+            Debug.Log("Invalid IP Address");
             }
 
 
