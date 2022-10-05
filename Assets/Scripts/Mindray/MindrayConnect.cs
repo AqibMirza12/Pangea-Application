@@ -104,13 +104,6 @@ class MindrayConnect : MonoBehaviour
             .ToString();
     }
 
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(0, 0, 100, 50), "Connect the Mindray Monitor using an Ethernet cable");
-        GUI.Label(new Rect(0, 0, 100, 50), "Data will be outputted in real-time");
-        GUI.Label(new Rect(0, 0, 100, 50), "Connecting to Mindray Monitor");
-    }
-
     public static void ConnectviaTCP()
         {
             //GetLocalIPv4();
@@ -179,11 +172,11 @@ class MindrayConnect : MonoBehaviour
                         string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
 
                         //Send TCP echo messages
-                        int nEchointerval = 1000;
+                        //int nEchointerval = 1000;
 
                         //if (nInterval != 1)
                         //{
-                        Task.Run(() => _MRaytcpclient.SendTCPEchoMessage(nEchointerval));
+                        //Task.Run(() => _MRaytcpclient.SendTCPEchoMessage(nEchointerval));
                         //}
 
                         //Receive PollDataResponse message
