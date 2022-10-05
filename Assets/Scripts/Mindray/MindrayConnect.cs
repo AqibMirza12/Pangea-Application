@@ -126,7 +126,7 @@ class MindrayConnect : MonoBehaviour
             MRayTCPclient _MRaytcpclient = MRayTCPclient.getInstance;
 
             string IPAddressRemote = "169.254.114.168";
-            Debug.Log(IPAddressRemote);
+            
 
 
         Debug.Log("Requesting Transmission set {0} from monitor" + nIntervalset);
@@ -142,7 +142,7 @@ class MindrayConnect : MonoBehaviour
                 try
                 {
 
-                    if (nInterval != 1)
+                    if (nInterval != 1) 
                     {
                         //Intermittent query interface
                         do
