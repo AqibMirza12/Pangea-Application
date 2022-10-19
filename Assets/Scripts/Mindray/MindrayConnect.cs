@@ -167,7 +167,7 @@ class MindrayConnect : MonoBehaviour
                         //Send QueryRequest message
 
                         //Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(nInterval));
-                        Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(9));
+                        //Task.Run(() => _MRaytcpclient.SendCycleQueryInterfaceRequest(9));
 
                         string path = Path.Combine(Directory.GetCurrentDirectory(), "MRayrawoutput.txt");
 
