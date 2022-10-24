@@ -380,7 +380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &212983003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,11 +394,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rawImage: {fileID: 1775479665}
-  url: https://10.130.10.20
+  url: rtsp://:@127.0.0.1:554/session0.mpg
   width: 480
   height: 256
   autoscaleRawImage: 0
-  mute: 1
+  mute: 0
 --- !u!4 &212983004
 Transform:
   m_ObjectHideFlags: 0
@@ -628,11 +628,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_rawImage: {fileID: 1775479665}
-  url: rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4
-  width: 480
-  height: 256
+  url: rtsp://:@127.0.0.1:554/session0.mpg
+  width: 1920
+  height: 1080
   autoscaleRawImage: 0
-  mute: 1
+  mute: 0
 --- !u!4 &383656733
 Transform:
   m_ObjectHideFlags: 0
@@ -1022,15 +1022,13 @@ GameObject:
   - component: {fileID: 811981201}
   - component: {fileID: 811981200}
   - component: {fileID: 811981203}
-  - component: {fileID: 811981202}
-  - component: {fileID: 811981204}
   m_Layer: 5
   m_Name: Vital Signs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &811981199
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1089,39 +1087,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811981198}
   m_CullTransparentMesh: 1
---- !u!328 &811981202
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811981198}
-  m_Enabled: 0
-  m_VideoClip: {fileID: 0}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 811981203}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 0
-  m_AspectRatio: 4
-  m_DataSource: 1
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/KU69974/Downloads/Half.mp4
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!20 &811981203
 Camera:
   m_ObjectHideFlags: 0
@@ -1165,39 +1130,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!328 &811981204
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811981198}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 0}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 2
-  m_TargetCamera: {fileID: 811981203}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 1
-  m_AspectRatio: 5
-  m_DataSource: 1
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
-  m_Url: file://C:/Users/KU69974/Downloads/Half.mp4
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!1 &1023028593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1848, y: 473}
+  m_AnchoredPosition: {x: -268, y: 473}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1023028595
@@ -1491,6 +1423,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054582250}
   m_CullTransparentMesh: 1
+--- !u!328 &1153236596 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 8599329621691295292, guid: 051aa90db2834ba439eec7ee0546ddb6, type: 3}
+  m_PrefabInstance: {fileID: 401750676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349428304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1349428305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1785,7 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExitButton: {fileID: 1023028593}
-  vitalSigns: {fileID: 811981202}
+  vitalSigns: {fileID: 1153236596}
   PiPCamera: {fileID: 698760676}
 --- !u!4 &1708949753
 Transform:
@@ -2011,8 +1948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 288}
-  m_SizeDelta: {x: 1920, y: 545}
+  m_AnchoredPosition: {x: 0, y: -7}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1827811210
 GameObject:
